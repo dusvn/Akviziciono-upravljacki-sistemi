@@ -1,0 +1,2 @@
+# Akviziciono-upravljacki-sistemi
+SCADA 
