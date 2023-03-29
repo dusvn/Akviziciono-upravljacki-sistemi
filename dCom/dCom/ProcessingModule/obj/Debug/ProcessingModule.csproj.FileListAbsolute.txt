@@ -1,0 +1,17 @@
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.csprojResolveAssemblyReference.cache
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\ProcessingModule.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\ProcessingModule.pdb
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Common.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Modbus.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\bin\Debug\Common.pdb
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\bin\Debug\ProcessingModule.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\bin\Debug\ProcessingModule.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\bin\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\bin\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.AssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CoreCompileInputs.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CopyComplete
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb

@@ -1,0 +1,7 @@
+STA 10
+TCP 25252 
+
+
+DO_REG 5 5000 0 0      1 0 DO @DigOut1 
+HR_INT 1 2000 0 0      100 0 AO @AnaOut 
+DO_REG 2 4000 0 0	     1 0 DO @DigOut2 		 

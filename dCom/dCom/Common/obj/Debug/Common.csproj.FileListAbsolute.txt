@@ -1,0 +1,11 @@
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\Common\bin\Debug\Common.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\Common\bin\Debug\Common.pdb
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\Common\obj\Debug\Common.dll
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\Common\obj\Debug\Common.pdb
+C:\Users\Racunar1\Desktop\Ognjen\SCADA\dCom\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\bin\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\bin\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\obj\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Common\obj\Debug\Common.pdb

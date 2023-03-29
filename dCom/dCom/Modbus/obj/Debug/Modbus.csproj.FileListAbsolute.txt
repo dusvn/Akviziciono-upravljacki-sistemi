@@ -1,0 +1,9 @@
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\bin\Debug\Modbus.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\bin\Debug\Modbus.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\bin\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\bin\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\obj\Debug\Modbus.csproj.AssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\obj\Debug\Modbus.csproj.CoreCompileInputs.cache
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\obj\Debug\Modbus.csproj.CopyComplete
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\obj\Debug\Modbus.dll
+C:\Users\dusan\OneDrive\Desktop\scada_mat\scada materijali\dCom\dCom\Modbus\obj\Debug\Modbus.pdb
