@@ -53,7 +53,7 @@ namespace Modbus.ModbusFunctions
         }
 
         /// <summary>
-        /// Using infos from modbus and reading data 
+        /// Using info from modbus and reading data 
         /// Key is tuple (Type of signal,adress of signal)
         /// Point Type
         /// DIGITAL_OUTPUT = 0x01,
@@ -68,24 +68,18 @@ namespace Modbus.ModbusFunctions
         /// <exception cref="NotImplementedException"></exception>
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
-            //TO DO: IMPLEMENT
-            Dictionary<Tuple<PointType, ushort>, ushort> read_value = new Dictionary<Tuple<PointType, ushort>, ushort>();
-            /*
-            byte b; // single byte 
-            ushort len = response[8];
-            ushort adress = response[9];
-            ushort value; 
+            ModbusReadCommandParameters mdmReadCommParams = this.CommandParameters as ModbusReadCommandParameters;
+            Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
 
-            for(int i = 0; i < len/2; ++i)
-            {
-                b= response[i];
-                value = (ushort)response[8+i<<2];
-            }
-            read_value.Add(<PointType.ANALOG_OUTPUT,>)
 
-            */ 
-            return read_value;
-            
+            byte port1 = response[10];
+            byte port2 = response[9];
+
+            ushort value = (ushort)(port1 + (port2 << 8));
+
+            dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, mdmReadCommParams.StartAddress), value);
+            return dic;
+
         }
     }
 }
