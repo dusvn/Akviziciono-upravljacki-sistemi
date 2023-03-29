@@ -72,10 +72,12 @@ namespace Modbus.ModbusFunctions
             Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
 
 
-            byte port1 = response[10];
-            byte port2 = response[9];
+            byte second_byte = response[10];
+            byte first_byte = response[9];
 
-            ushort value = (ushort)(port1 + (port2 << 8));
+            //ushort value = (ushort)(first_byte+(second_byte<<8));
+            // if we have analog value >255 we need more then one byte 
+            ushort value = (ushort)second_byte;
 
             dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, mdmReadCommParams.StartAddress), value);
             return dic;
