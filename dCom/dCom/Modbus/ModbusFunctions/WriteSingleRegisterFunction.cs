@@ -40,8 +40,13 @@ namespace Modbus.ModbusFunctions
         /// <inheritdoc />
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
-            //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            ModbusWriteCommandParameters ModbusWrite = this.CommandParameters as ModbusWriteCommandParameters;
+            Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
+
+            ushort value = (ushort)(response[11] + (response[10] << 8));
+            dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, (ushort)(ModbusWrite.OutputAddress)), value);
+
+            return dic;
         }
     }
 }

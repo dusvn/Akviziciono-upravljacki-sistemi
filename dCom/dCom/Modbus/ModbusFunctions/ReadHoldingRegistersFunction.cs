@@ -72,19 +72,17 @@ namespace Modbus.ModbusFunctions
             ushort byte_count = response[8];
             ushort value;
 
-            int start1 = 7;
-            int start2 = 8;
-            
+            int byte02_start = 7;
+            int byte01_start = 8;
             for (int i = 0; i < byte_count / 2; i++)
             {
-                byte p1 = response[start1 += 2];
-                byte p2 = response[start2 += 2];
+                byte second_byte = response[byte02_start += 2];
+                byte first_byte = response[byte01_start += 2];
 
-                value = (ushort)(p2 + (p1 << 8));
+                value = (ushort)(first_byte + (second_byte << 8));
 
-                dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, (ushort)(ModbusRead.StartAddress + i)), value);
+                dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_INPUT, (ushort)(ModbusRead.StartAddress + i)), value);
             }
-
             return dic;
 
         }
