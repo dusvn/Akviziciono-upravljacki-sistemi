@@ -42,3 +42,12 @@ C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono
 C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CopyComplete
 C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
 C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\bin\Debug\ProcessingModule.dll
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\bin\Debug\ProcessingModule.pdb
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\bin\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\bin\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.AssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CoreCompileInputs.cache
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.csproj.CopyComplete
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.dll
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi\dCom\dCom\ProcessingModule\obj\Debug\ProcessingModule.pdb
