@@ -21,3 +21,9 @@ C:\Users\dusan\OneDrive\Desktop\scada_project\Akviziciono-upravljacki-sistemi\dC
 C:\Users\dusan\OneDrive\Desktop\scada_project\Akviziciono-upravljacki-sistemi\dCom\dCom\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\dusan\OneDrive\Desktop\scada_project\Akviziciono-upravljacki-sistemi\dCom\dCom\Common\obj\Debug\Common.dll
 C:\Users\dusan\OneDrive\Desktop\scada_project\Akviziciono-upravljacki-sistemi\dCom\dCom\Common\obj\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\bin\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\bin\Debug\Common.pdb
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\obj\Debug\Common.dll
+C:\Users\dusan\OneDrive\Desktop\Akviziciono-upravljacki-sistemi-main\Akviziciono-upravljacki-sistemi-main\dCom\dCom\Common\obj\Debug\Common.pdb

@@ -9,8 +9,7 @@ using System.Xml.Schema;
 namespace Modbus.ModbusFunctions
 {
     /// <summary>
-    /// Class containing logic for parsing and packing modbus read holding registers functions/requests.
-    /// This is class for reading out from analog signals 
+    /// Read analog output 
     /// </summary>
     public class ReadHoldingRegistersFunction : ModbusFunction
     {
@@ -68,18 +67,24 @@ namespace Modbus.ModbusFunctions
         /// <exception cref="NotImplementedException"></exception>
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
-            ModbusReadCommandParameters mdmReadCommParams = this.CommandParameters as ModbusReadCommandParameters;
+            ModbusReadCommandParameters ModbusRead = this.CommandParameters as ModbusReadCommandParameters;
             Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
+            ushort byte_count = response[8];
+            ushort value;
 
+            int start1 = 7;
+            int start2 = 8;
+            
+            for (int i = 0; i < byte_count / 2; i++)
+            {
+                byte p1 = response[start1 += 2];
+                byte p2 = response[start2 += 2];
 
-            byte second_byte = response[10];
-            byte first_byte = response[9];
+                value = (ushort)(p2 + (p1 << 8));
 
-            //ushort value = (ushort)(first_byte+(second_byte<<8));
-            // if we have analog value >255 we need more then one byte 
-            ushort value = (ushort)second_byte;
+                dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, (ushort)(ModbusRead.StartAddress + i)), value);
+            }
 
-            dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, mdmReadCommParams.StartAddress), value);
             return dic;
 
         }

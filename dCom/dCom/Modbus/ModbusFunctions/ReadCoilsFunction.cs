@@ -8,7 +8,7 @@ using System.Reflection;
 namespace Modbus.ModbusFunctions
 {
     /// <summary>
-    /// Class containing logic for parsing and packing modbus read coil functions/requests.
+    /// Class for read digital out 
     /// </summary>
     public class ReadCoilsFunction : ModbusFunction
     {
@@ -24,15 +24,44 @@ namespace Modbus.ModbusFunctions
         /// <inheritdoc/>
         public override byte[] PackRequest()
         {
-            //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            byte[] request = new byte[12];
+            ModbusReadCommandParameters ModbusRead = this.CommandParameters as ModbusReadCommandParameters;
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusRead.TransactionId)), 0, request, 0, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusRead.ProtocolId)), 0, request, 2, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusRead.Length)), 0, request, 4, 2);
+            request[6] = ModbusRead.UnitId;
+            request[7] = ModbusRead.FunctionCode;
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusRead.StartAddress)), 0, request, 8, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusRead.Quantity)), 0, request, 10, 2);
+
+            return request;
         }
 
         /// <inheritdoc />
         public override Dictionary<Tuple<PointType, ushort>, ushort> ParseResponse(byte[] response)
         {
-            //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            ModbusReadCommandParameters ModbusRead = this.CommandParameters as ModbusReadCommandParameters;
+
+            Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
+
+            ushort byte_count = response[8]; // byte count 
+            ushort value;
+
+            for (int i = 0; i < byte_count; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    value = (ushort)(response[9 + i] & (byte)0x1);
+                    response[9 + i] /= 2; // shift >>  is == with /=2 
+
+                    if (ModbusRead.Quantity < (j + i * 8)) { break; } // Break if we dont have more bits 
+                                                                      // i == num of byte * 8 for bits 9 
+
+                    dic.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_OUTPUT, (ushort)(ModbusRead.StartAddress + (ushort)(j + i * 8))), value);
+                }
+            }
+
+            return dic;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Reflection;
 namespace Modbus.ModbusFunctions
 {
     /// <summary>
-    /// Class containing logic for parsing and packing modbus write single register functions/requests.
+    /// Write analog 
     /// </summary>
     public class WriteSingleRegisterFunction : ModbusFunction
     {
@@ -24,8 +24,17 @@ namespace Modbus.ModbusFunctions
         /// <inheritdoc />
         public override byte[] PackRequest()
         {
-            //TO DO: IMPLEMENT
-            throw new NotImplementedException();
+            ModbusWriteCommandParameters ModbusWrite = this.CommandParameters as ModbusWriteCommandParameters;
+            byte[] request = new byte[12];
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusWrite.TransactionId)), 0, request, 0, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusWrite.ProtocolId)), 0, request, 2, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusWrite.Length)), 0, request, 4, 2);
+            request[6] = ModbusWrite.UnitId;
+            request[7] = ModbusWrite.FunctionCode;
+            // Difference with read pack request 
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusWrite.OutputAddress)), 0, request, 8, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)ModbusWrite.Value)), 0, request, 10, 2);
+            return request;
         }
 
         /// <inheritdoc />
