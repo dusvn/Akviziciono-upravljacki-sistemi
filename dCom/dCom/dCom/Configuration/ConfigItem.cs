@@ -8,24 +8,24 @@ namespace dCom.Configuration
 	{
 		#region Fields
 
-		private PointType registryType;
-		private ushort numberOfRegisters;
-		private ushort startAddress;
-		private ushort decimalSeparatorPlace;
-		private ushort minValue;
-		private ushort maxValue;
-		private ushort defaultValue;
-		private string processingType;
-		private string description;
-		private int acquisitionInterval;
-		private double scalingFactor;
-		private double deviation;
-		private double egu_max;
-		private double egu_min;
-		private ushort abnormalValue;
-		private double highLimit;
-		private double lowLimit;
-        private int secondsPassedSinceLastPoll;
+		private PointType registryType; //0 
+		private ushort numberOfRegisters; //1
+		private ushort startAddress; // 2
+		private ushort decimalSeparatorPlace; // 3
+		private ushort minValue; //4
+		private ushort maxValue; //5
+		private ushort defaultValue; //6
+		private string processingType; //7
+		private string description; //8 
+		private int acquisitionInterval; //9 
+		private double scalingFactor; //10
+		private double deviation; //11
+		private double egu_max; //12 --> u config fajlu sam prvo unosio min pa onda max 
+		private double egu_min; //13 --> znaci da je na [12] mestu egu_min a na [13] egu max 
+		private ushort abnormalValue; //14
+		private double highLimit; //15
+		private double lowLimit; //16
+        private int secondsPassedSinceLastPoll; //17
 
 		#endregion Fields
 
@@ -294,6 +294,43 @@ namespace dCom.Configuration
                 Int32.TryParse(configurationParameters[9], out temp);
                 AcquisitionInterval = temp;
             }
+			if (configurationParameters[10].Equals("#"))
+			{
+				ScaleFactor = 1;
+			}else
+			{
+				Double.TryParse(configurationParameters[10], out doubleTemp);
+				ScaleFactor = doubleTemp; 
+			}
+
+			if (configurationParameters[11].Equals("#"))
+			{
+				Deviation = 0; 
+			}else
+			{
+                Double.TryParse(configurationParameters[11], out doubleTemp);
+                Deviation = doubleTemp;
+            }
+			if (configurationParameters[12].Equals("#"))
+			{
+				EGU_Min = 0;
+			}
+            else
+            {
+                Double.TryParse(configurationParameters[12], out doubleTemp);
+                EGU_Min = doubleTemp;
+            }
+
+            if (configurationParameters[13].Equals("#"))
+            {
+                EGU_Max = 1;
+            }
+            else
+            {
+                Double.TryParse(configurationParameters[13], out doubleTemp);
+                EGU_Max = doubleTemp;
+            }
+
         }
 
 		private PointType GetRegistryType(string registryTypeName)

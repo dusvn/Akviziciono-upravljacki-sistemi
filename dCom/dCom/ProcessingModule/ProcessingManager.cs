@@ -77,6 +77,8 @@ namespace ProcessingModule
         /// <param name="value">The value.</param>
         private void ExecuteAnalogCommand(IConfigItem configItem, ushort transactionId, byte remoteUnitAddress, ushort pointAddress, int value)
         {
+           
+            value = (int)eguConverter.ConvertToRaw(configItem.ScaleFactor, configItem.Deviation, value); // pretvaramo u sirove podatke zbog simulatora da mu to prosledimo 
             ModbusWriteCommandParameters p = new ModbusWriteCommandParameters(6, (byte)ModbusFunctionCode.WRITE_SINGLE_REGISTER, pointAddress, (ushort)value, transactionId, remoteUnitAddress);
             IModbusFunction fn = FunctionFactory.CreateModbusFunction(p);
             this.functionExecutor.EnqueueCommand(fn);
@@ -140,6 +142,8 @@ namespace ProcessingModule
         /// <param name="newValue">The new value.</param>
         private void ProcessAnalogPoint(IAnalogPoint point, ushort newValue)
         {
+            // na osnovu polja poziva se metoda koja ce pozvati metodu iz klase koja konvertuje u ing jedinice 
+            point.EguValue = eguConverter.ConvertToEGU(point.ConfigItem.ScaleFactor, point.ConfigItem.Deviation, newValue); 
             point.RawValue = newValue;
             point.Timestamp = DateTime.Now;
         }

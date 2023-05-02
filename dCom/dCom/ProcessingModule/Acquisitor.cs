@@ -59,7 +59,7 @@ namespace ProcessingModule
 		private void Acquisition_DoWork()
         {
             
-            List<IConfigItem> config_items = this.configuration.GetConfigurationItems();
+            List<IConfigItem> config_items = this.configuration.GetConfigurationItems(); // ucitava se konfig 
 
             while (true)
             {
