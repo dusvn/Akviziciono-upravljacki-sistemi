@@ -15,18 +15,65 @@ namespace ProcessingModule
         /// <returns>The alarm indication.</returns>
 		public AlarmType GetAlarmForAnalogPoint(double eguValue, IConfigItem configItem)
 		{
-			return AlarmType.NO_ALARM;
-		}
+            if (Out_of_range(eguValue, configItem))
+                if (Check_alarm_limit(eguValue, configItem) == 1)
+                    return AlarmType.HIGH_ALARM;
+                else if (Check_alarm_limit(eguValue, configItem) == -1)
+                    return AlarmType.LOW_ALARM;
+                else
+                    return AlarmType.NO_ALARM;
+            else
+                return AlarmType.REASONABILITY_FAILURE;
+        }
+
+
 
         /// <summary>
-        /// Processes the alarm for digital point.
+        ///  Provera da li je izvan opsega alarma 
+        /// </summary>
+        /// <param name="eguvalue"></param>
+        /// <param name="configitem"></param>
+        /// <returns></returns>
+
+        private static bool Out_of_range(double eguvalue, IConfigItem configitem)
+        {
+            if (eguvalue < configitem.EGU_Min || eguvalue > configitem.EGU_Max)
+                return false;
+            else
+                return true;
+
+        }
+
+        /// <summary>
+        /// Proverava koji je alarm u pitanju 
+        /// </summary>
+        /// <param name="eguvalue"></param>
+        /// <param name="configitem"></param>
+        /// <returns></returns>
+        private static int Check_alarm_limit(double eguvalue, IConfigItem configitem)
+        {
+
+            if (eguvalue <= configitem.LowLimit)
+                return -1;
+            else if (eguvalue == configitem.HighLimit)
+                return 1;
+            else
+                return 0;
+
+        }
+
+        /// <summary>
+        /// Alarm za digitalni 
         /// </summary>
         /// <param name="state">The digital point state</param>
         /// <param name="configItem">The configuration item.</param>
         /// <returns>The alarm indication.</returns>
 		public AlarmType GetAlarmForDigitalPoint(ushort state, IConfigItem configItem)
 		{
-            return AlarmType.NO_ALARM;
+            if (state == configItem.AbnormalValue)
+                return AlarmType.ABNORMAL_VALUE;
+            else
+                return AlarmType.NO_ALARM;
         }
 	}
 }

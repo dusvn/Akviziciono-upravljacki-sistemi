@@ -62,6 +62,7 @@ namespace ProcessingModule
 		{
 			//while (!disposedValue)
 			//{
+			//ovde se pise simulacija 
 			//}
 		}
 

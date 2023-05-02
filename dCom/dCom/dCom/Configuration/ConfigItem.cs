@@ -330,6 +330,35 @@ namespace dCom.Configuration
                 Double.TryParse(configurationParameters[13], out doubleTemp);
                 EGU_Max = doubleTemp;
             }
+			if (configurationParameters[14].Equals("#"))
+			{
+				AbnormalValue = 0; // zbog alarma 
+			}
+			else
+			{
+				Int32.TryParse(configurationParameters[14],out temp);
+				AbnormalValue = (ushort)temp; 
+			}
+
+			if (configurationParameters[15].Equals("#"))
+			{
+				LowLimit= 0;
+			}
+			else
+			{
+				Double.TryParse(configurationParameters[15], out doubleTemp);
+				LowLimit = doubleTemp;
+			}
+            if (configurationParameters[16].Equals("#"))
+            {
+                HighLimit = 0;
+            }
+            else
+            {
+                Double.TryParse(configurationParameters[16], out doubleTemp);
+                HighLimit = doubleTemp;
+            }
+
 
         }
 

@@ -2,11 +2,11 @@ STA 10
 TCP 25252
 
 
-DO_REG 1 5000 0 0      1 0 DO @USB1 
+DO_REG 1 5000 0 0      1 0 DO @USB1
 DO_REG 2 5001 0 0      1 0 DO @USB2
 DO_REG 1 5003 0 0      1 0 DO @Uticnica 
-DO_REG 1 5004 0 0      1 0 DO @USBC
+DO_REG 1 5004 0 0      1 1 DO @USBC
 HR_INT 1 2000 0 0      100 0 AO @KapacitetBaterije
-DO_REG 1 4000 0 0      1 0 DO @StanjePrvogNapajanja 
-DO_REG 1 4001 0 0      1 0 DO @StanjeDrugogNapajanja
+DO_REG 1 4000 0 0      1 1 DO @StanjePrvogNapajanja 
+DO_REG 1 4001 0 0      1 0 DO @StanjeDrugogNapajanja 
   		 
