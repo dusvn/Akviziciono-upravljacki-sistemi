@@ -81,7 +81,7 @@ namespace Modbus.ModbusFunctions
 
                 value = (ushort)(first_byte + (second_byte << 8));
 
-                dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_INPUT, (ushort)(ModbusRead.StartAddress + i)), value);
+                dic.Add(new Tuple<PointType, ushort>(PointType.ANALOG_OUTPUT, (ushort)(ModbusRead.StartAddress + i)), value);
             }
             return dic;
 
