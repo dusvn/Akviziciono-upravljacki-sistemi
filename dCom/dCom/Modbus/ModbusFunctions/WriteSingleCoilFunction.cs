@@ -43,7 +43,7 @@ namespace Modbus.ModbusFunctions
             ModbusWriteCommandParameters ModbusWrite = this.CommandParameters as ModbusWriteCommandParameters;
             Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
 
-            ushort value = (ushort)(response[11]);
+            ushort value = (ushort)(response[11] + (response[10] << 8));
             dic.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_OUTPUT, (ushort)(ModbusWrite.OutputAddress)), value);
 
             return dic;
