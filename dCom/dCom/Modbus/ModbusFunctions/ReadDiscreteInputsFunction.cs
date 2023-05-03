@@ -44,24 +44,29 @@ namespace Modbus.ModbusFunctions
 
             Dictionary<Tuple<PointType, ushort>, ushort> dic = new Dictionary<Tuple<PointType, ushort>, ushort>();
 
-            ushort byte_count = response[8]; // byte count 
+            int count = 0;
+            ushort adresa = ModbusRead.StartAddress;
             ushort value;
-
-            for (int i = 0; i < byte_count; i++)
+            byte maska = 1;
+            for (int i = 0; i < response[8]; i++)
             {
+                byte tempbyte = response[9 + i];
                 for (int j = 0; j < 8; j++)
                 {
-                    value = (ushort)(response[9 + i] & (byte)0x1);
-                    response[9 + i] /= 2; // shift >>  is == with /=2 
+                    value = (ushort)(tempbyte & maska);
+                    tempbyte >>= 1;
+                    dic.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_INPUT, adresa), value);
+                    count++;
+                    adresa++;
+                    if (count == ModbusRead.Quantity)
+                    {
+                        break;
+                    }
 
-                    if (ModbusRead.Quantity < (j + i * 8)) { break; } // Break if we dont have more bits 
-                                                                      // i == num of byte * 8 for bits 9 
-
-                    dic.Add(new Tuple<PointType, ushort>(PointType.DIGITAL_INPUT, (ushort)(ModbusRead.StartAddress + (ushort)(j + i * 8))), value);
                 }
             }
-
             return dic;
+        
         }
     }
 }
